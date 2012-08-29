@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment/>
+<entry key="rain">0.2</entry>
+<entry key="sprinkler|~rain">0.4</entry>
+<entry key="sprinkler|rain">0.01</entry>
+<entry key="grass_wet|~rain,~sprinkler">0</entry>
+<entry key="grass_wet|rain,~sprinkler">0.8</entry>
+<entry key="grass_wet|~rain,sprinkler">0.9</entry>
+<entry key="grass_wet|rain,sprinkler">0.99</entry>
+</properties>

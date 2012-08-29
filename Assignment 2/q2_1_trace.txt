@@ -1,0 +1,22 @@
+| ?- analogy(1,5,3,X).
+   (0) Call: analogy(1,5,3,_h186) ?
+   (1) Call: figure(1,_h237) ?
+   (1) Exit: figure(1,middle(triangle,square)) ?
+   (2) Call: figure(5,_h258) ?
+   (2) Exit: figure(5,middle(square,triangle)) ?
+   (3) Call: relate(middle(triangle,square),middle(square,triangle),_h280) ?
+   (3) Exit: relate(middle(triangle,square),middle(square,triangle),invert) ?
+   (4) Call: figure(3,_h298) ?	
+   (4) Exit: figure(3,middle(square,circle)) ?
+   (5) Call: relate(middle(square,circle),_h319,invert) ?
+   (5) Exit: relate(middle(square,circle),middle(circle,square),invert) ?
+   (6) Call: figure(_h186,middle(circle,square)) ?
+   (6) Exit: figure(7,middle(circle,square)) ?
+   (7) Call: write(invert) ?
+invert   (7) Exit: write(invert) ?
+   (0) Exit: analogy(1,5,3,7) ?
+
+X = 7
+
+yes
+[trace]

@@ -1,0 +1,250 @@
+<TITLE> Artificial Intelligence: Mid-Term Exam Solutions </TITLE>
+<H2> Artificial Intelligence: Mid-Term Exam </H2>
+
+<p align=center>
+October 26, 2005
+</p>
+
+<H2> Part I </H2>
+Short answers. 5 points each.
+
+<H3> Problem 1 </H3>
+(Multiple choice: 1 correct answer.) <br>
+In doing state space seach, it is sometimes useful to save states in
+a hash table as they are generated.  This is useful when: <br>
+B. The state space is not systematic.  <br>
+
+
+<H3> Problem 2 </H3>
+(Multiple choice: 1 correct answer.) <br>
+The advantage of iterative deepening over breath-first search is that <br>
+C. ID uses less memory than BFS. <br>
+(Note: The book says that (A) ID is faster than BFS as well, but it is mistaken.
+However, since the book says so, I have given full credit for that.)
+
+<H3> Problem 3 </H3>
+Give an example of a game where game tree evaluation will not work even in
+principle (i.e. even if there were no limits on the speed and memory
+of your computer.)  Give a one-sentence explanation of why game-tree
+evaluation will not work.
+
+<p>
+<b> Answer: </b> There are many examples.  For instance: <br>
+Games with more than two players. <br>
+Games with dice, because they are not deterministic. <br>
+Games with cards, because they are not deterministic and not perfect knowledge.
+<br>
+Games with hidden elements, such as Battleship or Stratego, because they
+are not perfect knowledge.
+<br>
+Athletic games, because they are (almost always) continuous.
+
+<H3> Problem 4 </H3>
+(Multiple choice: 1 correct answer.) <br>
+In the propositional calculus,
+let G be a set of sentences and let P be a sentence.  P is a logical 
+consequence of G if: <br>
+D. There does not exist a valuation satisfying G union {~P}
+
+
+<H2> Part II </H2>
+Long answers. 20 points each.
+
+<H3> Problem 5 </H3>
+<p>
+As discussed in problem set 2,
+an <I>independent set</I> Z in an undirected graph  
+is a set of vertices such that
+no two vertices I,J in Z are connected by an edge.  For instance,
+in the graph shown below, the set { E,F,H } is an independent set because 
+the graph does not contain any of the edges EF, EH, or FH.
+
+<p align=center>
+<img src="hwk2.gif">
+</p>
+
+The INDEPENDENT SET problem is, given a graph G and an integer K, find an
+independent set in G of size K.
+
+<p>
+The INDEPENDENT SET problem can be solved using the following systematic
+state space: <br>
+A <em> state </em> is a independent set of vertices. <br>
+An <em> operator </em> on state S is to add to S a new vertex V such
+that there are no arcs connecting V to any of the vertices in S and
+such that V is later alphabetically than any of the vertices in S. <br>
+The <em> start state </em> is the empty set. <br>
+A <em> goal state </em> is a set of size K.
+
+<p>
+A. Show the first six states (including the start state) generated in
+searching this state space using a depth-first search for the above
+example (G is the graph shown above; K=3).
+
+<p>
+<b> Answer: </b>
+<PRE> 
+{} --- {A} --- {A,B} fail
+    |       |
+    |       |- {A,C} fail
+    |       |
+    |       |- {A,F} fail
+    |
+    |- {B}
+</PRE>
+<p>
+B. Show the first six states (including the start state) generated in
+searching this state space using a breadth-first search for the above
+example.
+<p>
+<b> Answer: </b>
+<PRE> 
+{} --- {A} 
+    |
+    |- {B}
+    |
+    |- {C}
+    |
+    |- {D}
+    |
+    |- {E}
+</PRE>
+
+<p>
+C. Explain why it is important to impose the condition on the operators
+that the vertex V being added is later alphabetically than any of 
+the vertices in S.  What difference would this condition make in the search
+for the solution of the above example?
+
+<p>
+<b> Answer: </b>
+If the condition is omitted, then  the state space is no longer systematic;
+the same state can be constructed adding its elements in any order.  For
+instance, in our exam, the state {A,B} would be constructed, first as
+a child of state (A) and second as a child of state {B}.
+
+
+<H3> Problem 6 </H3>
+Show the result of carrying out alpha-beta pruning on the game tree
+shown below. What is the best move for MAX?  What is the value of
+the game?  (You may do this problem on the exam sheet; if so,
+please put your name on the exam sheet.)
+<p align=center>
+<img src="ug-mdt-sol05a.gif">
+</p>
+
+
+<H3> Problem 7 </H3>
+Convert the following sentence to CNF:
+<BLOCKQUOTE>
+~ [P ^ (Q=>R)]
+</BLOCKQUOTE>
+
+<p>
+<b> Answer: </b>
+<BLOCKQUOTE>
+P V Q. <br>
+P V ~R.
+</BLOCKQUOTE>
+
+<H3> Problem 8 </H3>
+Trace the workings of the Davis-Putnam procedure on the set of clauses.
+<BLOCKQUOTE>
+1. P V ~Q V ~S. <br>
+2. P V ~Q V R. <br>
+3. ~P V Q V R <br>
+4. ~P V ~S. <br>
+5. ~P V ~Q. <br>
+6. Q V S. <br>
+7. Q V Z. <br>
+8. ~R V S.
+</BLOCKQUOTE>
+
+
+<p>
+<b> Answer: </b>
+Let S0 be the set above. 
+
+<p>
+Step 1: Z is a pure literal.  Assign Z=TRUE. Delete clause 7.
+
+<BLOCKQUOTE>
+Set S1: <br>
+1. P V ~Q V ~S. <br>
+2. P V ~Q V R. <br>
+3. ~P V Q V R <br>
+4. ~P V ~S. <br>
+5. ~P V ~Q. <br>
+6. Q V S. <br>
+8. ~R V S.
+</BLOCKQUOTE>
+
+<p>
+Step 2: No pure literals, no singleton clauses. Try P=TRUE. Delete clausese
+1,2.  Delete ~P from 3, 4, 5.
+<BLOCKQUOTE>
+Set S2: <br>
+3.  Q V R <br>
+4. ~S. <br>
+5. ~Q. <br>
+6. Q V S. <br>
+8. ~R V S.
+</BLOCKQUOTE>
+
+Step 3: 4 is a singleton clause. Set S=FALSE. Delete 4. Delete S from 6 and 8.
+<BLOCKQUOTE>
+Set S3: <br>
+3.  Q V R <br>
+5. ~Q. <br>
+6. Q <br>
+8. ~R
+</BLOCKQUOTE>
+
+
+Step 4: 5 is a singleton clause. Set Q=FALSE.  Delete 5, delete Q from 3 and 6.
+6 is now the empty clause. Fail. Go back to set S1.  
+
+<p>
+Set P=FALSE. Delete clauses 3,4,5.  Delete P from 1 and 2.
+
+<BLOCKQUOTE>
+Set S4: <br>
+1. ~Q V ~S. <br>
+2. ~Q V R. <br>
+6. Q V S. <br>
+8. ~R V S.
+</BLOCKQUOTE>
+
+Step 5: No pure literals, no singleton clauses.   Try Q=TRUE. Delete 
+clause 6, delete ~Q from 1 and 2.
+
+<BLOCKQUOTE>
+Set S5: <br>
+1. ~S. <br>
+2. R. <br>
+8. ~R V S.
+</BLOCKQUOTE>
+
+Step 6: 1 is a singleton clause. Set S=FALSE. Delete 1.  Delete S from 8.
+
+<BLOCKQUOTE>
+Set S6: <br>
+2. R. <br>
+8. ~R. 
+</BLOCKQUOTE>
+
+
+Step 7: 2 is a singleton clause. Set R=TRUE.  Delete 2. Delete ~R from 8.
+8 is now the empty clause. Fail.
+<p>
+Go back to set S4. Try Q=FALSE. Delete clauses 1,2.  Delete Q from 6.
+
+<BLOCKQUOTE>
+Set S7: <br>
+6. S. <br>
+8. ~R V S.
+</BLOCKQUOTE>
+
+6 is a singleton clause.  Set S=TRUE. Delete 6 and 8.  We now have the
+empty set of clauses, so succeed with valuation P=FALSE, Q=FALSE, S=TRUE,
+Z=TRUE, R can be either true or false.

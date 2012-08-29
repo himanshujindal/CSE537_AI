@@ -1,0 +1,52 @@
+| ?- analogy(1,4,2,X).
+   (0) Call: analogy(1,4,2,_h186) ?
+   (1) Call: figure(1,_h237) ?
+   (1) Exit: figure(1,middle(circle,center)) ?
+   (2) Call: figure(4,_h258) ?
+   (2) Exit: figure(4,middle(square,center)) ?
+   (3) Call: relate(middle(circle,center),middle(square,center),_h280) ?
+   (3) Exit: relate(middle(circle,center),middle(square,center),same_orientatio
+) ?
+   (4) Call: figure(2,_h298) ?
+   (4) Exit: figure(2,middle(circle,top_left)) ?
+   (5) Call: relate(middle(circle,top_left),_h319,same_orientation) ?
+   (5) Exit: relate(middle(circle,top_left),middle(_h330,top_left),same_orienta
+ion) ?
+   (6) Call: figure(_h186,middle(_h330,top_left)) ?
+   (6) Exit: figure(2,middle(circle,top_left)) ?
+   (7) Call: write(same_orientation) ?
+same_orientation   (7) Exit: write(same_orientation) ?
+   (0) Exit: analogy(1,4,2,2) ?
+
+X = 2,
+   (0) Redo: analogy(1,4,2,2) ?
+   (7) Redo: write(same_orientation) ?
+   (7) Fail: write(same_orientation) ?
+   (6) Redo: figure(2,middle(circle,top_left)) ?
+   (6) Exit: figure(5,middle(square,top_left)) ?
+   (8) Call: write(same_orientation) ?
+same_orientation   (8) Exit: write(same_orientation) ?
+   (0) Exit: analogy(1,4,2,5) ?
+
+X = 5,
+   (0) Redo: analogy(1,4,2,5) ?
+   (8) Redo: write(same_orientation) ?
+   (8) Fail: write(same_orientation) ?
+   (6) Redo: figure(5,middle(square,top_left)) ?
+   (6) Fail: figure(_h186,middle(_h330,top_left)) ?
+   (5) Redo: relate(middle(circle,top_left),middle(_h330,top_left),same_orienta
+ion) ?
+   (5) Fail: relate(middle(circle,top_left),_h319,same_orientation) ?
+   (4) Redo: figure(2,middle(circle,top_left)) ?
+   (4) Fail: figure(2,_h298) ?
+   (3) Redo: relate(middle(circle,center),middle(square,center),same_orientatio
+) ?
+   (3) Fail: relate(middle(circle,center),middle(square,center),_h280) ?
+   (2) Redo: figure(4,middle(square,center)) ?
+   (2) Fail: figure(4,_h258) ?
+   (1) Redo: figure(1,middle(circle,center)) ?
+   (1) Fail: figure(1,_h237) ?
+   (0) Fail: analogy(1,4,2,_h186) ?
+
+no
+[trace]

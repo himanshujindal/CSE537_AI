@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment/>
+<entry key="S">0.3</entry>
+<entry key="M">0.6</entry>
+<entry key="R|M">0.3</entry>
+<entry key="R|~M">0.6</entry>
+<entry key="L|M,S">0.05</entry>
+<entry key="L|M,~S">0.1</entry>
+<entry key="L|~M,S">0.1</entry>
+<entry key="L|~M,~S">0.2</entry>
+<entry key="T|L">0.3</entry>
+<entry key="T|~L">0.8</entry>
+</properties>

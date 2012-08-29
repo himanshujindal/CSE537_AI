@@ -1,0 +1,426 @@
+<html><!-- #BeginTemplate "/Templates/template.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>AI Midterm Examination Review</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+ <table width="80%" border="0" align="center">
+  <tr> 
+    <td> <!-- #BeginEditable "body" --> 
+      <h1 align="center"><b>AI Midterm Review Questions</b></h1>
+      <p>The following questions are provided as an aid to preparing for the mid 
+        term exam. The scope of the midterm exam will vary from year to year, 
+        so this list may include some questions on material that we did not cover. 
+        If you are in doubt about whether or not you should know something the 
+        safest and best strategy to use is to go ahead and learn it. Just think 
+        of how much you will end up knowing. You can also check with the TA or 
+        instructor.</p>
+      <h2>Prolog</h2>
+      <h4>Buggy Prolog Code </h4>
+      One of your teammates on a group project has written the following code 
+      to compute the absolute value of an integer. You detect a bug in her code. 
+      Demonstrate the bug by finding a an example which does not work. 
+      <pre>
+  
+  % abs(+N,?M) is true iff the absolute value of N is M.
+  abs(N,M) :- number(N), N < 0, !, M is -N.
+  abs(N,N) :- number(N).
+</pre>
+      <h4>Buggy code</h4>
+      Your friend complains that his Prolog project is going into an infinite 
+      loop somewhere. You look at his code and zero in on this predicate. 
+      <pre>
+  % sumTo(+N,?Sum) is true if the sum of the integers from 1 to N
+  % (inclusive) is Sum.
+  sumTo(1,1).
+  sumTo(N,Sum) :- 
+    integer(N),
+    N2 is N-1, 
+    sumTo(N2,M),
+    Sum is N+M.
+</pre>
+      (a) Describe the bug, (b) give an example of a call to this predicate which 
+      will not terminate, and (c) give two ways to fix the bug, one using cut 
+      and one not suing cut. 
+      <h4> Buggy code </h4>
+      You are asked to implement the following database: 
+      <pre>
+  Bert only likes cookies.
+  Elmo likes cake.
+  Elmo likes cookies.
+  Ernie likes pudding.
+  Ernie likes candy.
+  Cookie Monster eats everything.
+</pre>
+      Your friend proposed to encode this as follows: 
+      <pre>
+  likes(elmo,cake).
+  likes(elmo,cookies).
+  likes(bert,cookies) :- !.
+  likes(ernie,pudding).
+  likes(ernie,candy).
+  likes(cookiemonster,X). 
+</pre>
+      (a) Show a Prolog query that corresponds to the question "Who eats cookies". 
+      (b) What is returned by this query? (c) Is this the right answer? (d) If 
+      not, how would you change the code to work properly? 
+      <h4> between/3 </h4>
+      Write the prolog predicate between(+From,+To,?X) which is true if X is an 
+      integer between the integers From and To. For example: 
+      <pre>
+  ?- between(1,10,3).
+  yes
+  ?- between(1,3,X),
+  X=1;
+  X=2;
+  X=3;
+  no
+</pre>
+      <h4> sumInterval </h4>
+      One of the ways that Prolog is not a pure logic programming language is 
+      that mathematical computations are done as calls to subroutines rather than 
+      done at "the logic level". This means that some programs can not be run 
+      "backwards". For example, consider the sumInterval/3 predicate which 
+      <pre>
+  % sumInterval(From,To,Sum) true iff the sum of the integers from From
+  % to To is Sum (inclusive)
+  sumInterval(N,N,N).
+  sumInterval(N,M,Sum) :- 
+   N < M, 
+   N2 is N+1,
+   sumInterval(N2,M,Partialsum),
+   Sum is N+Partialsum.
+</pre>
+      This works for calls like <i>sum(1,100,N)</i> and <i>sum(5,7,18)</i> but 
+      not for <i>sum(1,X,6)</i>. Write a version of sumInterval that works when 
+      called with <i>at least two</i> (any two) of its arguments are instantiated. 
+      <h4>Prolog notation conventions</h4>
+      <p>If I ask you to write a predicate<i> foo/3</i>, what does that tell you 
+        about the predicate? If I dewxcribe a predicate using the convention <i>bar(+X,?Z,-Y)</i> 
+        what can you tell me about the predicate?</p>
+      <h4>Mysterious predicate I</h4>
+      Describe in a few sentences what the following mystery predicate does. 
+      <pre>
+mystery([]). 
+mystery([H|T]) :- mystery(T). </pre>
+      <h4>Mysterious predicate II</h4>
+      <p>What does the following mystery predicate do? Why? </p>
+      <pre>
+  mystery([],0).
+  mystery([_|T],N) :- mystery(T,M), N is M+1. </pre>
+      <h4>Mysterious predicate III</h4>
+      Describe in a few sentences what the following mystery predicate does. 
+      <pre>
+  foo([],1).
+  foo([H|T],N) :- foo(T,M), N is M*H.
+</pre>
+      <h4> Simulating Prolog</h4>
+      Given the following Prolog facts and rules 
+      <pre>
+  parent ( a, b ).
+  parent ( a, c ).
+  parent ( b, d ).
+  parent ( b, e ).
+  parent ( c, f ).
+  parent ( f, g ).
+  parent ( f, h ).
+  parent ( f, i ).
+  ancestor ( X, Y ) :- parent ( X, Y ).
+  ancestor ( X, Y ) :- parent ( Z, Y ), ancestor ( X, Z ).
+</pre>
+      show the output which will be printed in response to the query assuming 
+      the user prompts for all possible responses. 
+      <pre>
+  ?- ancestor ( U, h ).
+</pre>
+      <p>Assume the user prompts for all possible responses. </p>
+      <h4> Unique/2 </h4>
+      Write a Prolog program that counts the number of unique atoms in a list 
+      of atoms. The entry point to the program must be the clause unique/2. For 
+      example: 
+      <pre>
+        ?-unique([cat,hat,cat,rat,mat,cat,hat],N).
+        yes
+        N = 4
+</pre>
+      <h4> Reverse/2</h4>
+      <p>Write the Prolog predicate reverse(?List1,?List2) which is true when 
+        List1 is a list and when it's top level elements are reversed it is equal 
+        to List2.</p>
+      <h4>Permutation/2</h4>
+      Write a Prolog predicate permutation(?list1,?List2) which is true when List1 
+      is a list and it has the same top-level elements as List2 but in a different 
+      permutation. 
+      <h4>Delete/3</h4>
+      <p>write a Prolog predicate delete1(?Term,?List1,?List2) which is true if 
+        List one is equal to List2 with the first occurrence of Term removed. 
+        Write deleteall(?Term,?List1,?List2) which is true if List one is equal 
+        to List2 with the fall occurrences of Term removed. </p>
+      <h4>Unification in Prolog</h4>
+      Unification is an essential operation in Prolog. For each of the following, 
+      tell (1) whether the two expressions can be unified, and (2) if so, what 
+      is the value of each variable after unification. <br>
+      <ul>
+        <li><code>Able = Baker <br>
+          </code></li>
+        <li><code>mother(Bill) = mother(Sally) <br>
+          </code></li>
+        <li><code>loves(john, mary) = loves(Mary, john) <br>
+          </code></li>
+        <li><code>husband(John, Mary) = wife(Mary, John) <br>
+          </code></li>
+        <li><code>spouse(John, Mary) = spouse(father(Bill), mother(Bill)) <br>
+          </code></li>
+        <li><code>father(mother(bill)) = father(Jane)<br>
+          </code></li>
+        <li><code>child(Mary, mother(Bill)) = child(child(Bill), Mary)<br>
+          </code></li>
+        <li><code>child(child(Sally), mother(Bill)) = child(child(John), Sally)<br>
+          </code></li>
+        <li><code>Mary = mother(child(Mary))<br>
+          </code></li>
+        <li><code>loves(john, _) = loves(_, Mary)<br>
+          </code></li>
+      </ul>
+      <h4> More Prolog </h4>
+      <p>Convert the following C program to Prolog. Your prolog program should 
+        have the same I/O behavior as the C program, but need not follow the same 
+        algorithm in implementing it.</p>
+      <pre>
+  main(v,c)char**c;{for(v[c++]="Hello, world!\n)";
+  (!!c)[*c]&&(v--||--c&&execlp(*c,*c,c[!!c]+!!c,!c));
+  **c=!c)write(!!*c,*c,!!**c);}
+</pre>
+      <h4>Kinship relations</h4>
+      Assume you have a Prolog database consisting of a large number of clauses 
+      of the following two predicates:<br>
+      <br>
+      <code>&nbsp;&nbsp;son(Son, Mother, Father). &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* 
+      Example: son(bill, Mary, john). */<br>
+      &nbsp;&nbsp;daughter(Daughter, Mother, Father).&nbsp;&nbsp;/* Example: daughter(sally, 
+      Mary, john). */<br>
+      </code> <br>
+      Write the following predicates. Each predicate should require not more than 
+      three clauses.<br>
+      <blockquote> <code>female(X)<br>
+        mate(X, Y) /* X and Y are parents of some child */<br>
+        childless(X) /* X has no children */<br>
+        different(X, Y) /* X and Y are not the same */<br>
+        siblings(X, Y) /* X and Y are different people with at least one parent 
+        in common */</code> </blockquote>
+      <h2><font face="Palatino">Search</font></h2>
+      <h4>Heuristic functions</h4>
+      <p>Invent a heuristic function for the 8-puzzle that sometimes over-estimates 
+        and illustrate how it can lead to a suboptimal solution. </p>
+      <h4><font face="Palatino">Search algorithms</font></h4>
+      What is the time complexity of the following algorithms: 
+      <ol>
+        <li><font face="Palatino"> Breadth-first search. </font> 
+        <li><font face="Palatino"> Depth-first search. </font> 
+        <li><font face="Palatino"> Uniform-cost search. </font> 
+        <li><font face="Palatino"> A* search.</font> 
+      </ol>
+      <h4> Search algorithms </h4>
+      <ol>
+        <li><font face="Palatino"> Describe uniform-cost search. </font> 
+        <li><font face="Palatino"> Describe A* search. </font> 
+        <li><font face="Palatino"> What is the relation between the two? </font> 
+          <br>
+      </ol>
+      <h4> Search Strategies</h4>
+      <ul>
+        <li> Compare and contrast Breadth-first and Depth-first search strategies. 
+        <li> Compare and contrast Breadth-first and Branch-and-Bound. 
+        <li> Compare and contrast Best-first and Branch-and-Bound. 
+        <li> Compare and contrast A*, Best-first and Branch-and-Bound. 
+      </ul>
+      <h2><font face="Palatino">Games</font></h2>
+      <h4>Tic Tac Toe</h4>
+      Explain the follow traditional AI koan: 
+      <blockquote> 
+        <p>In the days when Sussman was a novice, Minsky once came to him as he 
+          sat hacking at the PDP-6. </p>
+        <p> "What are you doing?", asked Minsky. </p>
+        <p> "I am training a randomly wired neural net to play Tic-Tac-Toe", Sussman 
+          replied. </p>
+        <p> "Why is the net wired randomly?", asked Minsky. </p>
+        <p> "I do not want it to have any preconceptions of how to play", Sussman 
+          said. </p>
+        <p> Minsky then shut his eyes. </p>
+        <p> "Why do you close your eyes?", Sussman asked his teacher. </p>
+        <p> "So that the room will be empty." </p>
+        <p> At that moment, Sussman was enlightened. </p>
+      </blockquote>
+      <h4>Nim (again) </h4>
+      Consider a version of the simple game Nim in which play begins with 23 tokens. 
+      Players alternate and each player removes 1, 2, or 3 tokens. The goal is 
+      to force the other player to take the last one. Assume an evaluation function 
+      as follows, where N is the number of objects remaining: 
+      <ul>
+        <li> N mod 4 = 0 is a position worth 4 points. 
+        <li> N mod 4 = 1 is a position worth 3 points. 
+        <li> N mod 4 = 2 is a position worth 2 points. 
+        <li> N mod 4 = 3 is a position worth 1 point. 
+      </ul>
+      For example, a position with 20 tokens is worth 4 points because 20 mod 
+      4 is 0. So, removing three tokens would be a good first move, under this 
+      evaluation function. 
+      <ol>
+        <li> Assume you go first. On the next page draw the search tree for the 
+          first 3 moves of the game (e.g., your initial move, your opponents response, 
+          and your response to that). Use the evaluation function and the minimal 
+          algorithm to fill in the evaluation value of each node in the tree. 
+        <li> After you have filled in the evaluation values, circle any nodes 
+          (both leaf nodes and non-leaf nodes) that would not need to be evaluated 
+          if Alpha-Beta pruning was used. 
+      </ol>
+      <h4><font face="Palatino">minimax vs alphabet</font></h4>
+      <p>If a game playing program is constrained to search to a certain number 
+        of ply before moving, then alpha-beta is clearly faster than mini-max 
+        search. But does it produce the same quality of play? Why or why not?</p>
+      <p></p>
+      <h4>&nbsp;</h4>
+      <h4>designing a static evaluation function</h4>
+      <h4><font face="Palatino">alpha-beta pruning</font></h4>
+      Describe alpha-beta pruning in game search. How does it differ from the 
+      minimax algorithm without pruning? 
+      <h4> Peg jumping </h4>
+      This solitaire game consists of a triangular board 
+      <pre>
+        x
+       x x
+      x o x
+     x x x x
+    x x x x x
+</pre>
+      where x denotes a peg and o an empty hole. A peg may jump over an adjacent 
+      peg if the hole behind it is empty. The peg that was jumped over is then 
+      removed. For example, in the initial configuration above there are two possible 
+      symmetric moves. The game is won if there is only one peg left on the board 
+      and lost if there is more than one but no further possible moves. A solution 
+      is strong if the final peg ends up in the initial hole. 
+      <ol>
+        <li> Write a Prolog program without using assert or retract to solve this 
+          puzzle and display a sequence of winning moves. 
+        <li> Write a second version that uses assert and retract and compare running 
+          times. 
+        <li> Determine if there is a strong solution. 
+        <li> Generalize one of your programs so that the initially empty hole 
+          may be anywhere on the board. Which initial configurations have a solution? 
+          Which initial configurations have a strong solution? 
+        <li> Modify your program so you can calculate (or at least estimate) the 
+          solution density for this puzzle: What is the probability that a sequence 
+          of random legal moves leads to a solution? 
+      </ol>
+      <h4> Towers of Hanoi </h4>
+      Consider a version of the familiar Towers of Hanoi puzzle with three towers 
+      and three disks. Initially the three disks (with sizes 1, 2 and 3) are all 
+      on tower one and the goal is to move them to tower three. The constraint 
+      is that a disk can never be on top of a smaller one one and that only one 
+      disk at a time can be moved. 
+      <ol>
+        <li> Define the state space, including the states and arcs. You don't 
+          need to list every state and arc, just define them. You may define the 
+          arcs in terms of actions. 
+        <li> Draw the complete search tree for this problem to a depth of three. 
+        <li> What is the maximum branching factor of the search tree? 
+        <li> What is the minimum branching factor of the search tree? 
+        <li> What is the length of the longest possible branch in the search tree? 
+        <li> What is the length of the shortest possible branch? 
+      </ol>
+      <h4> Heuristic Search </h4>
+      Invent a heuristic function for the eight puzzle that sometimes overestimates 
+      and illustrate how it can lead to a suboptimal solution. 
+      <h4> Search Problem</h4>
+      <p>Suppose that you need to find a path between S and G in the following 
+        graph. The number attached to each edge in the graph represents the COST 
+        of traversing the edge. </p>
+      <p>&nbsp; </p>
+      <center>
+        <IMG SRC="exam1_prb1.jpg"> 
+      </center>
+      <p>&nbsp;</p>
+      <p>Assume also that the ESTIMATED distances to the goal are given by the 
+        following table: </p>
+      <p> 
+      <center>
+        <table>
+          <tr> 
+            <td> <b>Node:</b> 
+            <td> 
+            <td> S 
+            <td> 
+            <td> B 
+            <td> 
+            <td> C 
+            <td> 
+            <td> D 
+            <td> 
+            <td> E 
+            <td> 
+            <td> F 
+            <td> 
+            <td> G 
+          <tr> 
+            <td> <b>Estimated Distance to G:</b> 
+            <td> 
+            <td> 6 
+            <td> 
+            <td> 1 
+            <td> 
+            <td> 3 
+            <td> 
+            <td> 2 
+            <td> 
+            <td> 5 
+            <td> 
+            <td> 4 
+            <td> 
+            <td> 0 
+        </table>
+      </center>
+      <p> For EACH of the following search methods list the nodes in the order 
+        in which they are <b>EXPANDED</B> by the search method while looking for 
+        a solution. As an illustration, the solution for Depth 1st search is provided 
+        below. 
+      <p> 
+      <ol>
+        <li> Depth 1st Search 
+        <li> <b>(5 points)</b> Breadth 1st Search 
+        <li> <b>(5 points)</b> Depth-limited Search (depth-limit = 2) 
+        <li> <b>(5 points)</b> Iterative Deepening Search 
+      </ol>
+      <h4> Bi-directional Search </h4>
+      Bi-directional search can be more effective than a unidirectional search 
+      from the start state to a goal state. However, it can not be used for all 
+      problems. Give two characteristics of a problem that must hold in order 
+      for bi-directional search to be applicable. 
+      <h2>Search terms</h2>
+      <p>Define the following terms as they are used to describe search algorithms.</p>
+      <p> 
+      <ol>
+        <li>Admissibility</li>
+        <li>Optimality</li>
+        <li>Completeness</li>
+      </ol>
+      <h2>Heuristic search</h2>
+      <p>Suppose we have two heuristic functions, h1 and h2, both of which are 
+        known to be admissible (e.g. underestimates of the optimal heuristic function 
+        h*). (a) What constraint has to hold for h1 to be considered as a stronger 
+        heuristic than h2? (b) which of the following heuristic is also admissible. 
+        (c) which are guarantee to be no weaker than either h1 or h2?</p>
+      <pre>
+   h3(n) = (h1(n) + h2(n)) / 2 
+   h4(n) = min(h1(n),h2(n))
+   h5(n) = max(h1(n), h2(n))
+   h6(n) = w1*h1(n) + w2*h2(n) where 0 =< w1,w2 =<1 and w1+w2=1.0
+</pre>
+      <p>&nbsp;</p>
+      <!-- #EndEditable --> </td>
+  </tr></table>
+</body>
+<!-- #EndTemplate --></html>
+

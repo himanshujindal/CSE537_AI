@@ -1,0 +1,16 @@
+
+Enter the length of the Golomb ruler:25
+Enter the number of parts the Golomb Ruler has to be split in:7
+0 25 1 4 10 18 23 
+405 times consistency check has been performed
+Do you want to repeat?y
+Enter the length of the Golomb ruler:10
+Enter the number of parts the Golomb Ruler has to be split in:8
+No solution was found for the problem
+82 times consistency check has been performed
+Do you want to repeat?y
+Enter the length of the Golomb ruler:6
+Enter the number of parts the Golomb Ruler has to be split in:4
+0 6 1 4 
+5 times consistency check has been performed
+Do you want to repeat?

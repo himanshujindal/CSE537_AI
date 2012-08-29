@@ -1,0 +1,26 @@
+| ?- reach(X).
+   (0) Call: reach(_h162) ?
+   (1) Call: traverse_#301(state(a,b,c,start),_h162) ?
+   (2) Call: path(state(a,b,c,start),_h218,_h223) ?
+   (2) Exit: path(state(a,b,c,start),walk(a,c),state(c,b,c,with_chair)) ?
+   (3) Call: traverse(state(c,b,c,with_chair),_h219) ?
+   (4) Call: path(state(c,b,c,with_chair),_h258,_h263) ?
+   (4) Exit: path(state(c,b,c,with_chair),push_chair(c,b),state(b,b,b,with_chair_below_banana)) ?
+   (5) Call: traverse(state(b,b,b,with_chair_below_banana),_h259) ?
+   (6) Call: path(state(b,b,b,with_chair_below_banana),_h298,_h303) ?
+   (6) Exit: path(state(b,b,b,with_chair_below_banana),climb_chair(b),state(b,b,b,on_chair_below_banana)) ?
+   (7) Call: traverse(state(b,b,b,on_chair_below_banana),_h299) ?
+   (8) Call: path(state(b,b,b,on_chair_below_banana),_h337,_h342) ?
+   (8) Exit: path(state(b,b,b,on_chair_below_banana),grasp(b),state(b,b,b,on_chair_with_banana)) ?
+   (9) Call: traverse(state(b,b,b,on_chair_with_banana),_h338) ?
+   (9) Exit: traverse(state(b,b,b,on_chair_with_banana),[]) ?
+   (7) Exit: traverse(state(b,b,b,on_chair_below_banana),[grasp(b)]) ?
+   (5) Exit: traverse(state(b,b,b,with_chair_below_banana),[climb_chair(b),grasp(b)]) ?
+   (3) Exit: traverse(state(c,b,c,with_chair),[push_chair(c,b),climb_chair(b),grasp(b)]) ?
+   (1) Exit: traverse_#301(state(a,b,c,start),[walk(a,c),push_chair(c,b),climb_chair(b),grasp(b)]) ?
+   (0) Exit: reach([walk(a,c),push_chair(c,b),climb_chair(b),grasp(b)]) ?
+
+X = [walk(a,c),push_chair(c,b),climb_chair(b),grasp(b)]
+
+yes
+[trace]

@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="460pt"
+   height="260pt"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.43"
+   sodipodi:docbase="/u/opi/80/aajanki"
+   sodipodi:docname="bayesnet.svg"
+   version="1.0">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.092858"
+     inkscape:cx="348.16458"
+     inkscape:cy="188.71672"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="1098"
+     inkscape:window-height="626"
+     inkscape:window-x="33"
+     inkscape:window-y="191" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="arc"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path2180"
+       sodipodi:cx="135.71428"
+       sodipodi:cy="80.933609"
+       sodipodi:rx="81.428574"
+       sodipodi:ry="28.571428"
+       d="M 217.14285 80.933609 A 81.428574 28.571428 0 1 1  54.285706,80.933609 A 81.428574 28.571428 0 1 1  217.14285 80.933609 z"
+       transform="matrix(0.694719,0,0,0.671332,113.7712,-0.199108)" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="173.5108"
+       y="58.02166"
+       id="text2188"><tspan
+         sodipodi:role="line"
+         id="tspan2190"
+         x="173.5108"
+         y="58.02166">SPRINKLER</tspan></text>
+    <path
+       transform="matrix(0.694719,0,0,0.671332,113.7712,-0.199108)"
+       d="M 217.14285 80.933609 A 81.428574 28.571428 0 1 1  54.285706,80.933609 A 81.428574 28.571428 0 1 1  217.14285 80.933609 z"
+       sodipodi:ry="28.571428"
+       sodipodi:rx="81.428574"
+       sodipodi:cy="80.933609"
+       sodipodi:cx="135.71428"
+       id="path3958"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:type="arc" />
+    <text
+       id="text3960"
+       y="58.02166"
+       x="173.5108"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="58.02166"
+         x="173.5108"
+         id="tspan3962"
+         sodipodi:role="line">SPRINKLER</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1.46428883;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3964"
+       sodipodi:cx="135.71428"
+       sodipodi:cy="80.933609"
+       sodipodi:rx="81.428574"
+       sodipodi:ry="28.571428"
+       d="M 217.14285 80.933609 A 81.428574 28.571428 0 1 1  54.285706,80.933609 A 81.428574 28.571428 0 1 1  217.14285 80.933609 z"
+       transform="matrix(0.694719,0,0,0.671332,113.7712,-0.199108)" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="173.5108"
+       y="58.02166"
+       id="text3966"><tspan
+         sodipodi:role="line"
+         id="tspan3968"
+         x="173.5108"
+         y="58.02166">SPRINKLER</tspan></text>
+    <path
+       transform="matrix(0.694719,0,0,0.671332,284.6344,-0.199108)"
+       d="M 217.14285 80.933609 A 81.428574 28.571428 0 1 1  54.285706,80.933609 A 81.428574 28.571428 0 1 1  217.14285 80.933609 z"
+       sodipodi:ry="28.571428"
+       sodipodi:rx="81.428574"
+       sodipodi:cy="80.933609"
+       sodipodi:cx="135.71428"
+       id="path3970"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1.46428883;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:type="arc" />
+    <text
+       id="text3972"
+       y="58.02166"
+       x="365.16995"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="58.02166"
+         x="365.16995"
+         id="tspan3974"
+         sodipodi:role="line">RAIN</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1.46428883;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3976"
+       sodipodi:cx="135.71428"
+       sodipodi:cy="80.933609"
+       sodipodi:rx="81.428574"
+       sodipodi:ry="28.571428"
+       d="M 217.14285 80.933609 A 81.428574 28.571428 0 1 1  54.285706,80.933609 A 81.428574 28.571428 0 1 1  217.14285 80.933609 z"
+       transform="matrix(0.694719,0,0,0.671332,205.3853,94.22538)" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="263.43881"
+       y="152.44609"
+       id="text3978"><tspan
+         sodipodi:role="line"
+         id="tspan3980"
+         x="263.43881"
+         y="152.44609">GRASS WET</tspan></text>
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker-start:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 232.70189,70.586462 L 265.22888,124.24231"
+       id="path9445" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 353.15259,71.127392 L 330.01492,122.93493"
+       id="path9447" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 6.7548346,52.653962 L 131.15373,52.653962"
+       id="path12086" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 42.270466,21.590664 L 42.270466,98.631996"
+       id="path12088" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="59.694023"
+       y="44.223213"
+       id="text12090"><tspan
+         sodipodi:role="line"
+         id="tspan12092"
+         x="59.694023"
+         y="44.223213">T</tspan></text>
+    <text
+       id="text12094"
+       y="44.223213"
+       x="104.09599"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="44.223213"
+         x="104.09599"
+         id="tspan12096"
+         sodipodi:role="line">F</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="53.511467"
+       y="22.865301"
+       id="text12971"><tspan
+         sodipodi:role="line"
+         id="tspan12973"
+         x="53.511467"
+         y="22.865301">SPRINKLER</tspan><tspan
+         sodipodi:role="line"
+         x="53.511467"
+         y="37.865301"
+         id="tspan12975" /></text>
+    <text
+       id="text12977"
+       y="74.011871"
+       x="53.511467"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="74.011871"
+         x="53.511467"
+         id="tspan12979"
+         sodipodi:role="line">0.4</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="99.037529"
+       y="74.011871"
+       id="text12981"><tspan
+         sodipodi:role="line"
+         id="tspan12983"
+         x="99.037529"
+         y="74.011871">0.6</tspan></text>
+    <path
+       id="path13011"
+       d="M 450.73564,52.653962 L 560.62605,52.653962"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path13013"
+       d="M 471.67678,21.531539 L 471.67678,93.331232"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text13015"
+       y="44.223213"
+       x="488.53833"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="44.223213"
+         x="488.53833"
+         id="tspan13017"
+         sodipodi:role="line">T</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="533.50226"
+       y="44.223213"
+       id="text13019"><tspan
+         sodipodi:role="line"
+         id="tspan13021"
+         x="533.50226"
+         y="44.223213">F</tspan></text>
+    <text
+       id="text13023"
+       y="22.865301"
+       x="501.46545"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         id="tspan13027"
+         y="22.865301"
+         x="501.46545"
+         sodipodi:role="line">RAIN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="482.91782"
+       y="74.011871"
+       id="text13029"><tspan
+         sodipodi:role="line"
+         id="tspan13031"
+         x="482.91782"
+         y="74.011871">0.2</tspan></text>
+    <text
+       id="text13033"
+       y="74.011871"
+       x="528.44379"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="74.011871"
+         x="528.44379"
+         id="tspan13035"
+         sodipodi:role="line">0.8</tspan></text>
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 219.56125,221.83106 L 415.22683,221.83106"
+       id="path13039" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 326.66784,190.9183 L 326.66784,314.56932"
+       id="path13041" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="219.87831"
+       y="213.4003"
+       id="text13043"><tspan
+         sodipodi:role="line"
+         id="tspan13045"
+         x="219.87831"
+         y="213.4003">SPRINKLER</tspan></text>
+    <text
+       id="text13047"
+       y="213.4003"
+       x="387.93134"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="213.4003"
+         x="387.93134"
+         id="tspan13049"
+         sodipodi:role="line">F</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="336.22272"
+       y="192.0424"
+       id="text13051"><tspan
+         sodipodi:role="line"
+         x="336.22272"
+         y="192.0424"
+         id="tspan13053">GRASS WET</tspan></text>
+    <text
+       id="text13055"
+       y="243.18896"
+       x="337.90887"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="243.18896"
+         x="337.90887"
+         id="tspan13057"
+         sodipodi:role="line">0.0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="383.43494"
+       y="243.18896"
+       id="text13059"><tspan
+         sodipodi:role="line"
+         id="tspan13061"
+         x="383.43494"
+         y="243.18896">1.0</tspan></text>
+    <text
+       id="text13071"
+       y="213.4003"
+       x="341.28116"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="213.4003"
+         x="341.28116"
+         id="tspan13073"
+         sodipodi:role="line">T</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="294.63101"
+       y="213.4003"
+       id="text13075"><tspan
+         sodipodi:role="line"
+         id="tspan13077"
+         x="294.63101"
+         y="213.4003">RAIN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="303.06177"
+       y="243.18896"
+       id="text13956"><tspan
+         sodipodi:role="line"
+         id="tspan13958"
+         x="303.06177"
+         y="243.18896">F</tspan></text>
+    <text
+       id="text13960"
+       y="243.18896"
+       x="251.35312"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="243.18896"
+         x="251.35312"
+         id="tspan13962"
+         sodipodi:role="line">F</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="337.90887"
+       y="263.42276"
+       id="text13972"><tspan
+         sodipodi:role="line"
+         id="tspan13974"
+         x="337.90887"
+         y="263.42276">0.8</tspan></text>
+    <text
+       id="text13976"
+       y="263.42276"
+       x="383.43494"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="263.42276"
+         x="383.43494"
+         id="tspan13978"
+         sodipodi:role="line">0.2</tspan></text>
+    <text
+       id="text13980"
+       y="263.42276"
+       x="303.06177"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="263.42276"
+         x="303.06177"
+         id="tspan13982"
+         sodipodi:role="line">T</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="251.35312"
+       y="263.42276"
+       id="text13984"><tspan
+         sodipodi:role="line"
+         id="tspan13986"
+         x="251.35312"
+         y="263.42276">F</tspan></text>
+    <text
+       id="text13988"
+       y="284.21863"
+       x="337.90887"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="284.21863"
+         x="337.90887"
+         id="tspan13990"
+         sodipodi:role="line">0.9</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="383.43494"
+       y="284.21863"
+       id="text13992"><tspan
+         sodipodi:role="line"
+         id="tspan13994"
+         x="383.43494"
+         y="284.21863">0.1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="303.06177"
+       y="284.21863"
+       id="text13996"><tspan
+         sodipodi:role="line"
+         id="tspan13998"
+         x="303.06177"
+         y="284.21863">F</tspan></text>
+    <text
+       id="text14000"
+       y="284.21863"
+       x="251.35312"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="284.21863"
+         x="251.35312"
+         id="tspan14002"
+         sodipodi:role="line">T</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="337.90887"
+       y="304.45242"
+       id="text14004"><tspan
+         sodipodi:role="line"
+         id="tspan14006"
+         x="337.90887"
+         y="304.45242">0.99</tspan></text>
+    <text
+       id="text14008"
+       y="304.45242"
+       x="383.43494"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="304.45242"
+         x="383.43494"
+         id="tspan14010"
+         sodipodi:role="line">0.01</tspan></text>
+    <text
+       id="text14012"
+       y="304.45242"
+       x="303.06177"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="304.45242"
+         x="303.06177"
+         id="tspan14014"
+         sodipodi:role="line">T</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="251.35312"
+       y="304.45242"
+       id="text14016"><tspan
+         sodipodi:role="line"
+         id="tspan14018"
+         x="251.35312"
+         y="304.45242">T</tspan></text>
+    <text
+       id="text16731"
+       y="44.119377"
+       x="10.056057"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="44.119377"
+         x="10.056057"
+         id="tspan16733"
+         sodipodi:role="line">RAIN</tspan></text>
+    <text
+       id="text16735"
+       y="73.908043"
+       x="18.486813"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="73.908043"
+         x="18.486813"
+         id="tspan16737"
+         sodipodi:role="line">F</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="52.596436"
+       y="93.227539"
+       id="text16743"><tspan
+         sodipodi:role="line"
+         id="tspan16745"
+         x="52.596436"
+         y="93.227539">0.01</tspan></text>
+    <text
+       id="text16747"
+       y="93.227539"
+       x="98.122498"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="93.227539"
+         x="98.122498"
+         id="tspan16749"
+         sodipodi:role="line">0.99</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="17.571781"
+       y="93.123711"
+       id="text16751"><tspan
+         sodipodi:role="line"
+         id="tspan16753"
+         x="17.571781"
+         y="93.123711">T</tspan></text>
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 322.17342,54.062313 L 275.52916,54.062313"
+       id="path18503" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3317"
+       sodipodi:sides="3"
+       sodipodi:cx="261.69913"
+       sodipodi:cy="121.77468"
+       sodipodi:r1="9.1503201"
+       sodipodi:r2="4.57516"
+       sodipodi:arg1="0.92729522"
+       sodipodi:arg2="1.9744928"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 267.18932,129.09494 L 252.6145,122.8692 L 265.29356,113.35991 L 267.18932,129.09494 z "
+       transform="translate(2.745096,1.830064)" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3319"
+       sodipodi:sides="3"
+       sodipodi:cx="333.07162"
+       sodipodi:cy="116.28449"
+       sodipodi:r1="9.4208307"
+       sodipodi:r2="4.7104154"
+       sodipodi:arg1="2.0778948"
+       sodipodi:arg2="3.1250924"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 328.49647,124.51978 L 328.22724,108.20464 L 342.49117,116.12905 L 328.49647,124.51978 z "
+       transform="translate(-2.745096,5.490192)" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3323"
+       sodipodi:sides="3"
+       sodipodi:cx="282.74487"
+       sodipodi:cy="54.062313"
+       sodipodi:r1="10.106858"
+       sodipodi:r2="5.0534291"
+       sodipodi:arg1="3.1415927"
+       sodipodi:arg2="4.1887902"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 272.63801,54.062313 L 287.7983,45.309517 L 287.7983,62.815109 L 272.63801,54.062313 z "
+       transform="translate(-7.320256,0)" />
+  </g>
+</svg>

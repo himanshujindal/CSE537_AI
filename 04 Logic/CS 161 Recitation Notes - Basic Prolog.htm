@@ -1,0 +1,826 @@
+<title>CS 161 Recitation Notes - Basic Prolog</title>
+<body bgcolor=0#888ff text=yellow link=gold vlink=goldenrod>
+<center>
+<h1>CS 161 Recitation Notes - Basic Prolog</h1>
+</center>
+<table>
+<tr>
+<td width=600>
+<h3>
+Prolog stands for Programmable Logic.  It is a computer programming
+language that is used for solving problems involving objects and
+the relationships between those objects.  Programming in Prolog
+typically consists of:
+<ul>
+<li>defining some <i>facts</i> about objects and their relationships
+<li>defining some <i>rules</i> about objects and their relationships, and
+<li>asking <i>questions</i> about objects and their relationships
+</ul>
+<hr>
+<h2>Part I - Defining Facts and Asking Simple Questions</h2>
+
+Facts in Prolog are stated in the following manner:
+<pre>
+   relation(object<sub>1</sub>,object<sub>2</sub>,...,object<sub>n</sub>).
+</pre>
+
+There are three important things to notice here:
+<ol>
+<li>The name of the relation must start with a lower-case letter.
+    In other words, <i>foo(...)</i> is ok, but <i>Foo(...)</i> is not.
+<li>The relation can apply to 0 or more objects, though usually it
+    will apply to 1 or more objects.
+<li>The fact must end with a period.
+</ol>
+
+That said, here are some examples of Prolog facts:
+<pre>
+    tall(dan).
+    short(napoleon).
+    sour(lemons).
+    sister(susan,mary).
+    plays(charlie_parker,saxophone).
+    instrument(saxophone).
+    plays(shaquille,basketball,lakers).
+    smart_guy(socrates).
+</pre>
+
+These facts represent relationships which could be expressed in
+English as:
+<pre>
+    Dan is tall.
+    Napoleon is short.
+    Lemons are sour.
+    Susan is the sister of Mary.
+    Charlie Parker plays saxophone.
+    A saxophone is an instrument.
+    Shaquille plays basketball for the Lakers.
+    Socrates is a smart guy.
+</pre>
+
+After entering a set of facts into Prolog, you can ask questions
+about the facts.  With the facts given above, you could ask
+questions like:
+
+<pre>
+    Are lemons sour?
+    Is Dan tall?
+    Is Susan the sister of Mary?
+</pre>
+
+In Prolog, these would be stated as
+
+<pre>
+    sour(lemons).
+    tall(dan).
+    sister(susan,mary).
+</pre>
+
+You might have noticed that these questions look just like the
+facts themselves. The difference is in where the statement is
+fed to Prolog.  Prolog's default mode is a query mode, where you
+can ask questions.  The prompt for query mode looks like this:
+
+<pre>
+    | ?-
+</pre>
+
+When you are in query mode, you can't enter new facts directly,
+but only ask questions about the facts that are currently
+defined.  To add facts to Prolog, you need to either load them
+from a file, or enter them directly using user-consult mode.
+<i>consult</i> is a Prolog predicate which will accomplish
+either of these.  See my page on <a href=prolog1.html>Using
+Prolog on SEASnet</a> to find out how to load from files.
+To enter user-consult mode, you call the consult predicate
+with an argument of <i>user</i>:
+
+<pre>
+    | ?- consult(user).
+    |
+
+</pre>
+
+At this point, the prompt loses the question mark, indicating
+that you are no longer asking Prolog questions, but telling
+it facts instead.  Now we can tell Prolog all
+the facts I stated above:
+
+<pre>
+    | tall(dan).
+    | short(napoleon).
+    | sour(lemons).
+    | sister(susan,mary).
+    | plays(charlie_parker,saxophone).
+    | instrument(saxophone).
+    | plays(shaquille,basketball,lakers).
+    | smart_guy(socrates).
+    | {user consulted, 0 msec 17972 bytes}    &lt;--- <i>I typed &lt;control-d&gt; here</i>
+    | ?-
+</pre>
+By typing a &lt;control-d&gt;, you send Prolog back into query mode, where
+we can ask it some questions about the facts just entered.
+<pre>
+    | ?- sour(lemons).
+
+    yes
+    | ?- tall(dan).
+
+    yes
+    | ?- sister(susan,mary).
+
+    yes
+    | ?- sister(susan,wanda).
+
+    no
+    | ?- tall(napoleon).
+
+    no
+</pre>
+
+For Prolog, answering these five questions is just a matter of
+verifying that the facts exist in the current data set.
+In each of the first three cases, the facts queried on were
+things that we entered into the set of facts that Prolog knows,
+so it answered <i>yes</i>.  Since the last two were not facts
+that we entered, Prolog answers <i>no</i> to indicate that it
+couldn't find them.
+
+<p>
+
+Note that the query <i>tall(napoleon)</i> is not false (from Prolog's
+point of view) because of the fact <i>short(napoleon)</i>  It is
+merely the case that Prolog can't find the fact <i>tall(napoleon)</i>
+If we like, we could enter both <i>tall(napoleon)</i> and
+<i>short(napoleon)</i> as facts into Prolog, and it wouldn't see any
+contradiction between them.  This is because Prolog only knows what
+you enter in as facts and predicates.  You could enter a relationship
+between the <i>tall</i> and <i>short</i> predicates, but we'll get
+to that later.
+
+<p>
+
+First, consider a different type of query.  So far, all of the
+questions asked could be answered with a yes or a no.  What about
+questions like these:
+
+<pre>
+    Who is tall?
+    Who is Mary's sister?
+    Who plays what instrument?
+</pre>
+
+In these questions, there is some unknown element which we are
+expecting to be the response; filled by the <i>who</i> or
+<i>what</i> in the sentences.  These could be restated like this
+in Prolog:
+
+<pre>
+    tall(Who).
+    sister(Who,mary).
+    plays(Who,Instrument).
+</pre>
+
+In the Prolog versions of the queries, the unknown element is
+filled in with a variable.  Any term that starts with an upper
+case letter in Prolog is a variable.  In the three queries above,
+All 3 uses of <i>Who</i> and the term <i>Instrument</i> are all
+variables.  The term <i>mary</i> is still a constant, since it
+is lower case.  predicate names (in this case <i>tall</i>,
+<i>sister</i>, and <i>plays</i>) must always start with a lower
+case letter.  You can't make a query like
+<i>AnyRelation(susan,mary).</i>
+
+<p>
+
+Prolog's response to a query with one or more
+variables is somewhat different than its response to yes/no
+questions:
+
+<pre>
+    | ?- tall(Who).
+
+    Who = dan ?
+</pre>
+
+At this point, Prolog pauses to ask if Dan is an acceptible
+answer.  As the user, you have two choices.  You can
+either type a carriage return, in which case your query predicate will
+exit with success.  Or you can type in a semi-colon and a carriage
+return, and Prolog will fail the current set of variable bindings
+and attempt to resolve the query with different variables.
+
+<pre>
+    | ?- tall(Who).
+
+    Who = dan ?
+
+    yes
+    | ?- tall(Who).
+
+    Who = dan ? ;
+
+    no
+</pre>
+
+In this case, since we only have one person being defined as tall
+in the fact set, Prolog fails on the re-try.  Note that my choice
+of the variable "Who" is arbitrary.  It has no meaning, other than
+the fact that the upper case starting letter makes it a variable.
+I could as easily have used "Why" or "Checkers" or "X" and gotten
+a similar response:
+
+<pre>
+    | ?- tall(X).
+
+    X = dan ?
+
+    yes
+</pre>
+
+In answering this type of question, Prolog shows a bit more of
+its matching process.  Prolog is trying to find some way to
+<i>unify</i> variables and constants so that the query matches
+some fact in the data set.  In this case Prolog is able to unify
+the query <i>tall(X)</i> with the fact <i>tall(dan)</i> from the
+data set by assigning <i>dan</i> to the variable <i>X</i>.  When
+it finds this match, it shows us a list of the variable bindings
+which will allow the query to succeed.
+
+<p>
+
+When we typed a semi-colon before, we told Prolog to fail that
+unification.  In other words, we told it to throw away those
+variable bindings and try to find a different solution.  Here are
+some other examples of Wh-type queries:
+
+<pre>
+    | ?- sister(Who,mary).
+
+    Who = susan ?
+
+    yes
+    | ?- plays(Who,WhatInstrument).
+
+    Who = charlie_parker,
+    WhatInstrument = saxophone ? ;
+
+    no
+    | ?-
+</pre>
+
+The last example illustrates another facet of Prolog's processing.
+When I asked for an alternate answer, it couldn't find one.  There is
+another "plays" clause in my data set, but it has three arguments
+while the query only has two, so it doesn't match.  To summarize,
+Prolog's method for trying to match up queries with facts is this:
+
+<ol>
+<li>Go through the list of facts in the order in which they were
+entered.
+<li>Look for a fact that has the same predicate name (i.e. plays
+= plays) as the query.
+<li>Verify that it has the same number of arguments.
+<li>For each pair of arguments (queryarg<sub>i</sub>,
+factarg<sub>i</sub>) try to unify them:
+  <ul>
+  <li>If queryarg<sub>i</sub> & factarg<sub>i</sub> are both constants,
+      then they must match exactly.
+  <li>If one is a constant and one is a variable, then bind the
+      constant to the variable
+  <li>If both are variables, then map them to the same variable on
+      the variable stack and (we'll see where this applies later).
+  </ul>
+<li>If all the variables can be unified, then the match has
+succeeded - return the list of variable bindings.
+<li>If the user types a ;, then look for another fact that
+unifies.
+</ol>
+
+Most Prolog interpreters are actually a little bit smarter than I've
+indicated in steps 1-2.  They usually index the set of predicates names,
+so they don't have to try to match the predicate name, just the
+variables.  Also note that you can have predicates as arguments to
+other predicates (more on this later).
+
+<p>
+
+At this point, let's set up a new set of facts to deal with, and
+try some queries that have more than one possible match.
+<pre>
+    | ?- consult(user).
+    | sister(gertrude,wilbur).
+    | sister(sally,mary).
+    | sister(susan,mary).
+    | {user consulted, 0 msec 0 bytes}
+
+    yes
+    | ?- sister(Who,mary).
+
+    Who = sally ? ;
+
+    Who = susan ? ;
+
+    no
+</pre>
+
+Here I've just found both of Mary's sisters with the query.  A
+common mistake people make at first is to accidently capitalize a
+proper name when trying to make a query.  Another common error is
+forgetting to capitalize something that's supposed to be a
+variable.  Here are examples of both of these errors:
+<pre>
+    | ?- sister(Who,Mary).
+
+    Who = gertrude,
+    Mary = wilbur ?
+
+    yes
+    | ?- sister(who,mary).
+
+    no
+</pre>
+
+In the first example, I entered the variable <i>Mary</i> rather
+than the constant <i>mary</i>.  The error should be apparent when
+I see that I'm getting back one more variable binding than I
+expected.  In the second example, I forgot to capitalize the
+variable <i>who</i>, so Prolog couldn't find the fact
+sister(who,mary).
+
+<hr>
+<h2>Part II - Multi-clause Queries</h2>
+
+Sometimes a query involves more than one relation.  For example,
+suppose I have the original data set and I want to know who plays
+an instrument.  I could make a query like this:
+
+<pre>
+    plays(Person,X), instrument(X).
+</pre>
+
+Here I've asked Prolog to find "a person who plays something"
+and then verify that that "something" is an instrument.  This
+is called a <i>conjunctive</i> query, because it's the conjunction
+of two clauses.  The important point is that the X in the
+<i>plays</i> predicate is the same X as in the <i>instrument</i>
+predicate.
+
+<p>
+
+Prolog will evaluate this query by first trying to match the
+first predicate, plays(Person,X).  Assuming it has the first
+set of facts that I suggested here, then it will match this
+with plays(charlie_parker,saxophone).  This will bind the
+variable <i>Person</i> to the value <i>charlie_parker</i>,
+and the variable <i>X</i> to the value <i>saxophone</i>.
+
+<p>
+
+Prolog will then try to match the second predicate, but
+since X is already bound, what it tries to match will be
+<i>instrument(saxophone)</i>.  Since that exact predicate is
+in the set of facts we entered, Prolog succeeds, and tells
+us the bindings of the variables that were in the query:
+
+<pre>
+    | ?- plays(Person,X), instrument(X).
+
+    X = saxophone,
+    Person = charlie_parker ?
+
+    yes
+    | ?-
+</pre>
+
+You could make a more complicated query by asking, "Which of Mary's
+siblings plays an instrument?"  Now there are 3 clauses involved:
+
+<pre>
+   sister(S,mary), plays(S,X), instrument(X).
+</pre>
+
+In this case the query would fail, as charlie_parker is
+the only person currently in our data set who plays an
+instrument, and Mary's not his sister (at least as far as
+Prolog knows).
+
+<p>
+
+This is an important point.  What Prolog knows is only what
+you tell it.  So something can only be true if you have provided
+it as a fact in the data set, or you have provided a combination
+of facts and rules from which Prolog can prove it.  This is known
+as the Closed World Assumption.  If you can't prove it, then it
+must be false.  Obviously this isn't always a nice assumption, as
+there will always be many things that are true but can't be proven
+(you'd have to have an awfully big computer to hold <i>all</i>
+the facts that are true).
+<p>
+
+In the previous example, note that the order of the clauses
+is mostly irrelevant.  You would get the same result[s] if
+you did any of these searches:
+
+<ol>
+<li>sister(S,mary), instrument(X), plays(S,X).
+<li>instrument(X), plays(S,X), sister(S,mary).
+<li>instrument(X), sister(S,mary), plays(S,X).
+<li>plays(S,X), instrument(X), sister(S,mary).
+<li>plays(S,X), sister(S,mary), instrument(X).
+</ol>
+
+The reason you may want to choose one order over
+another is to reduce choices for further search.
+For example, it's a good idea to have successive clauses
+use variable bindings from the previous clause to restrict
+their search.  For example, version 2 above first finds
+something that is an instrument, and binds it to X.  Then
+that value is bound in the second clause, so it can search
+on <i>plays(S,trumpet)</i> or <i>plays(S,guitar)</i> rather
+than <i>plays(S,X)</i>.
+
+<p>
+
+The original form I gave for the query is actually the
+best of all, since it starts out with its first clause,
+sister(S,mary), being partially restricted.  Then it passes
+the binding of S from the first clause to the second clause,
+so the second step in the search is partially restricted as
+well.  Finally, it passes the binding of X from the
+plays clause to the instrument clause, so the last step
+is just to test if the clause is there or not.
+
+
+<p>
+
+I should point out that there's you can do a conjunctive
+query with totally unrelated clauses, just as you can ask
+"What's the time and what year were you born?"  On the
+other hand, there's no advantage to asking them as a
+conjunctive query rather than two separate queries.
+
+<p>
+<hr>
+<h2>Part III - Defining Rules</h2>
+From my discussion so far, you might get the impression that
+you need to state every individual fact in order to make
+Prolog do anything useful.  Actually there is a way to
+state a relationship that doesn't require you to state
+every possible detail of the relationship.  You can do it
+with a rule.
+
+<p>
+
+For example, suppose I want to assert the fact that <i>anyone
+who is a tall person plays basketball</i>.  If I have a
+data set that has 200 people listed as tall, I could add
+200 clauses for the same people that indicates that each
+one plays basketball, or I could write the following rule:
+
+<pre>
+    plays(X,basketball) :- tall(X).
+</pre>
+
+You could read this as "X plays basketball on the condition
+that X is tall."  Now if I want to find out if Dan plays
+basketball, and this is my data set:
+
+<pre>
+   short(john).
+   tall(dan).
+   tall(joe).
+   thin(joe).
+   plays(X,basketball) :- tall(X).
+   plays(X,piano) :- short(X).
+</pre>
+
+
+then here's how Prolog will work:
+
+<ol>
+<li>I give the query "plays(dan,basketball)."
+<li>Prolog matches this against the head of the rule
+    "plays(X,basketball)".
+<li>Prolog binds X to dan, and tests the conditional
+    clause.
+<li>Now Prolog has the query "tall(dan)"
+<li>tall(dan) is in the data set, so Prolog succeeds.
+<li>Since there were no variables in the original query,
+    Prolog just responds with "yes".  (If I had made a
+    query like plays(dan,X), then Prolog would tell me
+    X = basketball)
+</ol>
+
+Ok, so what if only tall, thin people play basketball?
+Then I could write the right hand side of the rule as
+a conjunctive goal:
+
+<pre>
+    plays(X,basketball) :- tall(X), thin(X).
+</pre>
+
+Now when Prolog matches the head of this query, it has to
+succeed on each of the clauses in the right hand side for
+the overall match to succeed.  If I now want to ask Prolog
+"who plays basketball?" using the same data set, then here's
+how Prolog will work:
+
+<ol>
+<li>I ask the query plays(Who,basketball).
+<li>Prolog matches this to the head of the rule
+    plays(X,basketball).
+<li>Prolog binds Who = X
+<li>Now it will substitute the two goals, "tall(X)" and
+    "thin(X)"
+<li>Prolog tries to match tall(X)
+<li>It succeeds, by matching on the fact tall(dan)
+<li>Now Prolog binds X=dan and tries the second goal, thin(dan)
+<li>Prolog fails to find thin(dan).
+<li>It goes back and tries to find a different solution
+    for the goal tall(X).  As part of this, it undoes the
+    binding of X=dan
+<li>Prolog finds a new match in tall(joe).
+<li>Prolog binds X=joe and tries the second goal, thin(joe).
+<li>Prolog finds the fact thin(joe), so it succeeds
+<li>Since both of the conditions of the rule succeeded,
+    Prolog succeeds on the rule by returning the variable
+    bindings from the original query, remember Who=X, and
+    from step 11, we have X=joe, so...
+<li>Prolog displays "Who = joe" and waits to see if we
+    accept the answer.
+<li>I type a carriage return, so Prolog cheerfully tells
+    me "yes", indicating it answered my query affirmatively.
+</ol>
+
+Of course, it does most of this behind the scenes, so all I
+see is the result from step 13, and the "yes" from step 14.
+Here's what it looks like:
+
+<pre>
+    | ?- plays(Who,basketball).
+
+    Who = joe ?
+
+    yes
+    | ?-
+</pre>
+
+If you want to see the details of what clauses Prolog is
+trying out in a search, you can turn on trace by calling
+the trace predicate.  Here's what a trace of the previous
+query looks like:
+
+<pre>
+    | ?- trace.
+    {The debugger will first creep -- showing everything (trace)}
+
+    yes
+    {trace}
+    | ?- plays(Who,basketball).
+       1  1  Call: plays(_187,basketball) ?
+       2  2  Call: tall(_187) ?
+       2  2  Exit: tall(dan) ?
+       3  2  Call: thin(dan) ?
+       3  2  Fail: thin(dan) ?
+       2  2  Redo: tall(dan) ?
+       2  2  Exit: tall(joe) ?
+       3  2  Call: thin(joe) ?
+       3  2  Exit: thin(joe) ?
+       1  1  Exit: plays(joe,basketball) ?
+
+    Who = joe ?
+
+    yes
+    {trace}
+    | ?-
+</pre>
+
+For more examples of defining rules, see my
+<a href=prolog3.html>genealogy</a> example.
+
+<p>
+<hr>
+<h2>Part IV - Lists in Prolog</h2>
+Prolog has a very nice format for dealing with lists.  Unlike the
+non-intuitive expressions (CAR L) and (CDR L), Prolog represents
+the head (the equivalent of the CAR in Lisp) and the tail (the
+equavalent of the CDR) like this:
+
+<pre>
+    [Head|Tail]
+</pre>
+
+Notice that I've got both Head and Tail capitalized, so they're
+both variables in this case.  Of course, they could be constants,
+or terms containing variables, like these:
+
+<pre>
+    [a|Tail]
+    [X|[a,b,c]]
+    [drove(john,car)|OtherFacts]
+    [implies(X,Y)|OtherFacts]
+</pre>
+
+For the last two examples here, think of the problem where you're
+storing some set of facts, but within some sub-context.  For
+example, recall the Encyclopedia Brown problems.  You need to be
+able to distinguish things that someone <i>says</i> happened from things
+that are <i>observed</i> to happen.  if you just define it all as
+facts in Prolog, then you can't tell what's real from what's a
+lie.  Thus, you can keep two lists, one of real facts and one of
+"facts" stated by the person who Encyclopedia accuses.  Then you
+search for something in the "facts" that contradicts something in
+the real facts.
+<p>
+
+As in Lisp, there is a special symbol for the null list, but
+instead of ( ), it's [ ].  You may remember that in Lisp, the
+(CAR ( )) is ( ) and the (CDR ( )) is ( ).  This is not the case
+in Prolog, where you can't pull the head or tail off of a
+null list.  If you try to match [ ] with [H|T], it won't match.
+
+<p>
+
+One other notation is worth mentioning here.  If you don't
+care what the value of some variable is, you can use an
+_ for the variable name.  For example, if you have a rule that
+only cares about the head of a list, you could start the
+rule like this:
+
+<pre>
+    process_head([Head|_]) :- ...
+</pre>
+
+On the other hand, if you don't care about the head, but
+you only plan on dealing with the tail of the list, you could
+do it this way:
+
+<pre>
+    process_tail([_|Tail]) :- ...
+</pre>
+
+The benefit of this is that if Prolog knows that you don't
+care about a value, it doesn't try to store its variable binding
+on the stack, so you save space.  It'll become clear where you
+could do this in the next section.
+
+
+<p>
+<hr>
+<h2>Part V - Prolog Programming</h2>
+
+Now that we've got all the building blocks covered, let's consider
+how to program a simple function in Prolog.  One of the first
+functions you learned to write in lisp was the member function,
+which takes an element and a list as arguments and returns true if
+the element is contained somewhere in the list.
+In case you've forgotten it, the code looked something like this
+
+<pre>
+    (defun member (E L)
+        (cond ((null L) 'F)
+              ((equal E (CAR L)) 'T)
+              ('T (member E (CDR L)))))
+</pre>
+
+The first condition checks if the list is ( ), and if so it
+fails.  The second condition checks if the element is at the
+head of the list, and the last condition recurses to check if
+the element is in the tail.  The definition of this function
+in Prolog is very similar:
+
+<pre>
+    member(H,[H|T]).
+    member(X,[H|T]) :- member(X,T).
+</pre>
+
+The first statement here is like the second condition of the
+Lisp code.  It says that the first argument (the element) is
+a member of the second argument (the list) if it is the head
+of the list.  The second statement is like the
+recursive call in the Lisp code.  It says that the element is
+a member of the list on the condition that it is a member of
+the tail.
+<p>
+
+The only thing missing here that was in the Lisp code is the
+first condition, which checked for the null list.  Remember
+from the last section that the null list in Prolog can never
+match a [H|T] type representation.  Thus, the extra check for
+the null list isn't needed in Prolog.
+<p>
+
+To see how this works, suppose I call this function
+with the query member(2,[1,2,3]).  Here's how Prolog
+handles it:
+
+<ol>
+<li>Prolog trys to match my call, <i>member(2,[1,2,3])</i>
+    to the first statement, <i>member(H,[H|T])</i>,
+    and fails, since 2 is not equal to 1 (remember, the
+    H of the first argument has the same binding as the
+    H in the list argument).
+<li>Prolog tries the second statement, and succeeds in
+    matching my query to the head of the second statement
+<li>Prolog binds the variables X = 2, H = 1 and T = [2,3]
+<li>Now Prolog must try to solve the right hand side of
+    the rule, so it trys the goal "member(2,[2,3])"
+<li>Prolog succeeds in matching member(2,[2,3]) to the
+    first statement, so that goal succeeds.
+<li>Since the right hand side goal was successfully
+    matched, Prolog succeeds the head that was matched in
+    step 2.
+<li>Since that match was generated by the initial call,
+    Prolog has solved the whole query, and it returns "yes".
+</ol>
+
+<p>
+
+One neat thing about Prolog functions is that they usually
+don't distinguish what's an input and what's an output.  Thus
+I could call the member function like this:
+
+<pre>
+    member(X,[a,b,c]).
+</pre>
+
+In this case, Prolog would succeed in matching my query to the
+first statement and return "X = a".  If I asked for more results
+by typing in a ";", Prolog would first give me "X = b", then
+"X = c", then it would fail and say "no".
+
+<p>
+One more thing to notice here is that the first statement
+<i>member(H,[H|T])</i>, doesn't really do anything with the
+tail.  Thus this would be a good place to use the _ to
+indicate we don't care about its value.  Similarly, the second
+statement doesn't really use the head, so we could use it
+again there.  Here's the revised code:
+<pre>
+    member(H,[H|_]).
+    member(X,[_|T]) :- member(X,T).
+</pre>
+
+Another simple function on lists can be implemented simply
+in Prolog as well; namely, the append function.  If we
+were implementing append in Lisp, we would do it something
+like this:
+
+<pre>
+    (defun append (L1 L2)
+        (cond ((null L1) L2)
+              (t (cons (car L1) (append (cdr L1) L2)))
+        )
+    )
+</pre>
+
+The processing here works the following way.  If the
+first list is ( ), then you just return the second list.
+Otherwise, you take the car of the first list,
+and put it back on to the front of the result you get
+when you append the cdr of the first list to the
+second list.  When this is executed in Lisp, it'll take
+elements off the first list one by one until it's ( ),
+then it'll go back and put them back on one by one with
+the cons.
+
+<p>
+
+A Prolog implementation works <i>exactly</i> the same way:
+
+<pre>
+    append([],L,L).
+    append([H|T1],L,[H|T2]) :- append(T1,L,T2).
+</pre>
+
+The symmetry between the two functions is obvious: the first
+line of the Prolog program is equivalent to the first condition
+of the Lisp program, and the second line is equivalent to the
+second condition.  The only differences are 1) the way lists
+and their manipulation are represented, and 2)that the result is
+returned as the third argument instead of as a return value
+for the function (since Prolog functions can only return yes
+or no).
+
+<p>
+
+In case it's not clear, let me change the variable names to
+represent what they are in the Lisp code
+
+<pre>
+    append([],L2,L2).
+    append([CarL1|CdrL1],L2,[CarL1|RecursiveAppendResult]) :-
+        append(CdrL1,L2,RecursiveAppendResult).
+<pre>
+
+
+<hr>
+At this point, if you haven't already, I'd suggest you go look at my
+lecture notes on the <a href=prolog3.html>genealogy</a> and
+<a href=prolog4.html>parsing</a> examples.
+
+
+</h3>
+
+</table>
